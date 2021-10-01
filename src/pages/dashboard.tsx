@@ -1,8 +1,16 @@
-import { Header } from '../components/Header';
+import { Flex } from '@chakra-ui/react';
 
-/* eslint-disable prettier/prettier */
-export default function Dashboard () {
+import { Header } from '../components/Header';
+import { Siderbar } from '../components/Sidebar';
+
+export default function Dashboard() {
   return (
-    <Header />
+    <Flex direction="column" h="100Vh">
+      <Header />
+
+      <Flex w="100%" my="6" maxWidth={1480} mx="auto" px="6">
+        <Siderbar />
+      </Flex>
+    </Flex>
   );
 }
