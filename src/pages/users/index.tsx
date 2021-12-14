@@ -23,14 +23,13 @@ import { useQuery } from 'react-query';
 import { Header } from '../../components/Header';
 import { Siderbar } from '../../components/Sidebar';
 import { Pagination } from '../../components/Pagination';
+import { api } from '../../services/api';
 
 export default function UserList() {
   const { data, isLoading, isFetching, error } = useQuery(
     'users',
     async () => {
-      const response = await (
-        await fetch('http://localhost:3000/api/users')
-      ).json();
+      const { data: response } = await api.get('users');
 
       const users = response.users.map(user => {
         return {
