@@ -112,7 +112,9 @@ export default function UserList() {
                           <Box>
                             <Link
                               color="purple.400"
-                              onMouseEnter={() => handlePrefetchUser(user.id)}
+                              onMouseEnter={() =>
+                                handlePrefetchUser(Number(user.id))
+                              }
                             >
                               <Text fontWeight="bold">{user.name}</Text>
                             </Link>
