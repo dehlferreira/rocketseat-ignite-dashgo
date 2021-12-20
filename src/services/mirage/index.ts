@@ -21,7 +21,6 @@ export function makeServer() {
     serializers: {
       application: ActiveModelSerializer,
     },
-
     models: {
       user: Model.extend<Partial<User>>({}),
     },
@@ -41,7 +40,8 @@ export function makeServer() {
     },
 
     seeds(server) {
-      server.createList('user', 200);
+    server.createList('user', 200);
+
     },
 
     routes() {
